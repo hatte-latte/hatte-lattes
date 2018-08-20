@@ -10,6 +10,9 @@
 /build
 
 # misc
+CRA-README.md
+README.old.md
+
 .DS_Store
 .env.local
 .env.development.local
