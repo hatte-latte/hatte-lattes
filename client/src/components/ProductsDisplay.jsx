@@ -2,6 +2,7 @@ import React from 'react';
 import ProductDisplay from './ProductDisplay.jsx';
 
 const ProductsDisplay = (props) => {
+  console.log(props);
   // const products = props.productList.map((product, i) => <ProductDisplay name = {product.name} key = {i} />)
   return(
     <div className="productBox">

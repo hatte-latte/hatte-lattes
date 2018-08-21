@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+
 import {
   BrowserRouter as Router, Link, Switch, Route
 } from 'react-router-dom';
+
 // import logo from './logo.svg';
 import './App.css';
 import ProductsDisplay from './components/ProductsDisplay';
