@@ -16,7 +16,6 @@ class ProductsContainer extends Component {
   }
 
   render() {
-    console.log(this.props)
     return(
       <div className="innerbox">
         <ProductsDisplay productList = {this.props.productList} />
