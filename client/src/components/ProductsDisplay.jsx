@@ -3,6 +3,7 @@ import ProductDisplay from './ProductDisplay.jsx';
 
 const ProductsDisplay = (props) => {
   console.log(props);
+  // map through product list and render component for each product
   // const products = props.productList.map((product, i) => <ProductDisplay name = {product.name} key = {i} />)
   return(
     <div className="productBox">
