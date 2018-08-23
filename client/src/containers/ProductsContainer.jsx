@@ -1,5 +1,6 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../actions/actions';
 import ProductsDisplay from '../components/ProductsDisplay.jsx';
 
 const mapStateToProps = store => ({
@@ -7,7 +8,7 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-
+  getInventory: () => dispatch(actions.getAllInventory())
 });
 
 class ProductsContainer extends Component {
@@ -15,10 +16,15 @@ class ProductsContainer extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.getInventory()
+  }
+
   render() {
+    console.log('product list ====> ', this.props.productList)
     return(
       <div className="innerbox">
-        <ProductsDisplay productList = {this.props.productList} />
+        <ProductsDisplay productList = {this.props.productList}  />
       </div>
     )
   }

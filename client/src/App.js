@@ -9,6 +9,7 @@ import './App.css';
 import ProductsDisplay from './components/ProductsDisplay';
 import ProductDetail from './components/ProductDetail';
 import CartDisplay from './components/CartDisplay';
+import ProductsContainer from './containers/ProductsContainer';
 
 class App extends Component {
   state = {
@@ -52,7 +53,7 @@ class App extends Component {
           </nav>
         </div>
         <Switch>
-          <Route exact path="/" component={ProductsDisplay} />
+          <Route exact path="/" component={ProductsContainer} />
           <Route exact path="/shop" component={ProductsDisplay} />
           <Route exact path="/shop/item" component={ProductDetail} />
           <Route exact path="/cart" component={CartDisplay} />

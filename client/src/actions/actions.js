@@ -6,6 +6,20 @@ export const addProduct = (productName) => ({
   payload: productName
 });
 
+const inventoryData = (data) => ({
+  type: types.FETCH_INVENTORY,
+  payload: data  
+})
+
+export const getAllInventory = () => dispatch => (
+  fetch('http://localhost:3000/shop/')
+    .then(res => res.json())
+    .then(products => {
+      dispatch(inventoryData(products))
+    })
+    .catch(err => console.error(err))
+)
+
 export const addToCart = (productId) => {
   const requestAddToCart = () => ({
     type: types.REQUEST_ADD_TO_CART
