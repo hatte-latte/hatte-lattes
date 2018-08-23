@@ -15,6 +15,9 @@ module.exports = function (pool) {
       }).catch(err => {
         if(err) throw new Error(err);
       });
+    },
+    getItem: (req, res, next) => {
+      
     }
   }
 }
