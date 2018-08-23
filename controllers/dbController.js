@@ -16,9 +16,9 @@ module.exports = function (pool) {
         if(err) throw new Error(err);
       });
     },
-
-
-
+    getItem: (req, res, next) => {
+      
+    }
   }
 }
 
