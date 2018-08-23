@@ -1,16 +1,13 @@
+const dbController = require('../controllers/dbController');
+
 module.exports = (app, pool) => {
     console.log("at buyer")
     
 
     // shows all items
-    app.get('/shop/',
-
-        (req, res) => {
-            console.log("shop")
-            res.send({
-                test: "test"
-            });
-        });
+    app.get('/shop/', dbController(pool).getInventory, (req, res) => {
+        res.send(res.locals.inventory);
+    });
 
     // shows item page
     app.get('/shop/item/:id',
