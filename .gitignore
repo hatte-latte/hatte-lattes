@@ -4,6 +4,8 @@
 
 # dependencies
 /node_modules
+/client/node_modules
+
 
 # testing
 /coverage
@@ -14,6 +16,7 @@
 # misc
 CRA-README.md
 README.old.md
+package-lock.json
 
 .DS_Store
 .env.local

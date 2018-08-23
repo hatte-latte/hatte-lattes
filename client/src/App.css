@@ -22,7 +22,30 @@
   font-size: large;
 }
 
+h3 {
+  font-size: 1.0em;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.Navbar {
+  padding: 0.25em 0.5em 1em 0.5em;
+}
+
+.nav-links {
+  padding: 0 0.5em;
+  color: #4f4f4f;
+}
+
+.cart {
+  font-size: 0.25em;
+  text-align: right;
+  padding: 1em;
+}
+
+.cartRow {
+  padding: 0 2em;
 }

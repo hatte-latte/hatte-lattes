@@ -1,0 +1,5 @@
+export const ADD_PRODUCT = "ADD_PRODUCT";
+export const REQUEST_ADD_TO_CART = "REQUEST_ADD_TO_CART";
+export const RECEIVE_ADD_TO_CART = "RECEIVE_ADD_TO_CART";
+export const REQUEST_CART = "REQUEST_CART";
+export const RECEIVE_CART = "RECEIVE_CART";
