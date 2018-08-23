@@ -12,12 +12,18 @@ const inventoryData = (data) => ({
 })
 
 export const getAllInventory = () => dispatch => (
-  fetch('http://localhost:3000/shop/')
-    .then(res => res.json())
-    .then(products => {
-      dispatch(inventoryData(products))
-    })
-    .catch(err => console.error(err))
+  axios.get('/shop')
+  .then(res => {
+    console.log(res.data);
+    dispatch(inventoryData(res.data))
+   
+  })
+  // fetch('http://localhost:3000/shop/')
+  //   .then(res => console.log(res.data))
+  //   .then(products => {
+  //     dispatch(inventoryData(products))
+  //   })
+  //   .catch(err => console.error(err))
 )
 
 export const addToCart = (productId) => {
