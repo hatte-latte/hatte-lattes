@@ -1,5 +1,3 @@
-/* 
-
 import * as types from '../constants/actionTypes';
 
 const initialState = {
@@ -7,21 +5,12 @@ const initialState = {
 }
 
 const productsReducer = (state=initialState, action) => {
-  let productList;
-  
   switch(action.type) {
-    case types.ADD_PRODUCT:
-      const newProduct = {productName: action.payload}
-      productList = state.productList.slice();
-      productList.push(newProduct);
-
-      return {
-        ...state,
-        productList
-      }
+    case types.FETCH_INVENTORY:
+      return Object.assign({}, state, action.payload);
+    default:
+      return state;
   }
-}
+};
 
 export default productsReducer;
-
-*/
