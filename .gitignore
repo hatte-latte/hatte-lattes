@@ -3,11 +3,10 @@
 .env
 
 # dependencies
-node_modules
+/node_modules
 /client/node_modules
-/function/node_modules
 
-package-lock.json
+
 # testing
 /coverage
 
@@ -17,6 +16,7 @@ package-lock.json
 # misc
 CRA-README.md
 README.old.md
+package-lock.json
 
 .DS_Store
 .env.local
