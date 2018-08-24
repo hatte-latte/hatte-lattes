@@ -6,7 +6,7 @@ import {
 
 // import logo from './logo.svg';
 import './App.css';
-import ProductsDisplay from './components/ProductsDisplay';
+import ProductDisplay from './components/ProductDisplay';
 import ProductDetail from './components/ProductDetail';
 import CartDisplay from './components/CartDisplay';
 import ProductsContainer from './containers/ProductsContainer';
@@ -35,11 +35,9 @@ class App extends Component {
         </div>
         <Switch>
           <Route exact path="/" component={ProductsContainer} />
-          <Route exact path="/shop" component={ProductsDisplay} />
+          <Route exact path="/shop" component={ProductsContainer} />
           <Route exact path="/shop/item" component={ProductDetail} />
           <Route exact path="/cart" component={CartDisplay} />
-          <Route exact path="/shop/confirmation" component={ProductsDisplay} />
-          <Route exact path="/shop/orders" component={ProductsDisplay} />
           <Route exact path="/services/home" component={Seller} />
         </Switch>
       </div>
