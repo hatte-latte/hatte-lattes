@@ -10,6 +10,7 @@ import ProductsDisplay from './components/ProductsDisplay';
 import ProductDetail from './components/ProductDetail';
 import CartDisplay from './components/CartDisplay';
 import ProductsContainer from './containers/ProductsContainer';
+import Seller from './containers/Seller';
 
 class App extends Component {
   state = {
@@ -50,6 +51,7 @@ class App extends Component {
           <nav className="Navbar">
             <span className="nav-links"><Link to="/">Home</Link></span>
             <span className="nav-links"><Link to="/shop">Shop</Link></span>
+            <span className="nav-links"><Link to="/services/home">Services</Link></span>
           </nav>
         </div>
         <Switch>
@@ -59,6 +61,7 @@ class App extends Component {
           <Route exact path="/cart" component={CartDisplay} />
           <Route exact path="/shop/confirmation" component={ProductsDisplay} />
           <Route exact path="/shop/orders" component={ProductsDisplay} />
+          <Route exact path="/services/home" component={Seller} />
         </Switch>
       </div>
       </Router>

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
-import ProductsDisplay from '../components/ProductsDisplay.jsx';
+import ProductDisplay from '../components/ProductsDisplay.jsx';
 
-const mapStateToProps = store => ({
-  productList: store.products.productList
-})
+// const mapStateToProps = store => ({
+//   productList: store.products.productList
+// })
 
-const mapDispatchToProps = dispatch => ({
-  getInventory: () => dispatch(actions.getAllInventory())
-});
+
 
 class ProductsContainer extends Component {
   constructor(props) {
@@ -19,15 +17,52 @@ class ProductsContainer extends Component {
   componentDidMount() {
     this.props.getInventory()
   }
-
+  componentDidUpdate() {
+    // this.props.getInventory();
+  }
   render() {
-    console.log('product list ====> ', this.props.productList)
-    return(
-      <div className="innerbox">
-        <ProductsDisplay productList = {this.props.productList}  />
-      </div>
-    )
+    let arrayofProducts = [];   
+    console.log('product list ====> ', this.props.products)
+    console.log(this.props.products.productList, "PRODUCT LIST ");
+    if (!this.props.products) return null
+    else {
+
+    arrayofProducts =  this.props.products.productList.map((element, index) =>
+  {
+    console.log(element)
+    return (<ProductDisplay details={element} key={element.id} />)
+  }  
+  
+  );
+    }
+    console.log(arrayofProducts, "ARRAYS TO BE RENDERED")
+
+    //  arrayofProducts = this.props.products.map(element => {console.log('x')}
+    // //  (     <ProductsDisplay details={element}  />)
+    //   );
+    
+      return(
+        <div className="innerbox">
+          {arrayofProducts}
+        </div>
+      )
+    
+    
+
+
   }
 }
+
+
+const mapStateToProps = state => {
+
+  return { products: state.products};
+};
+
+console.log(mapStateToProps, "CONTAINEERRRR");
+
+const mapDispatchToProps = dispatch => ({
+  getInventory: () => dispatch(actions.getAllInventory())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer);

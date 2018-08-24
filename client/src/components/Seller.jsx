@@ -1,12 +1,9 @@
 import React from 'react';
 
 const ProductDisplay = (props) => {
-  console.log(  props, "DETAILS")
-  
   return (
-
     <div className="productBox">
-      <div><a href="/shop/item"><img src="https://images-na.ssl-images-amazon.com/images/I/41uWV9uIEML._QL70_.jpg" alt="product"></img></a></div>
+    <h2>SELLER</h2>
       <div>Product Name</div>
       <div>Price</div>
       <button>Add to Cart</button>
