@@ -25,7 +25,7 @@ class ProductsContainer extends Component {
     if (!this.props.products) return null
     else {
       arrayofProducts = this.props.products.productList.map((element, index) => {
-      return <ProductDisplay details={element.photo} key={index} />
+      return <ProductDisplay photo={element.photo} description={element.description} key={index} />
       });
     }
     console.log(arrayofProducts, "ARRAYS TO BE RENDERED")

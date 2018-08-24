@@ -1,14 +1,11 @@
 import React from 'react';
 
 const ProductDisplay = (props) => {
-  console.log(props, "DETAILS")
-  
   return (
 
     <div className="productBox">
-      <div><a href="/shop/item"><img src={props.details} alt="product"></img></a></div>
-      <div>Product Name</div>
-      <div>Price</div>
+      <div><a href="/shop/item"><img src={props.photo} alt="product"></img></a></div>
+      <div>{props.description}</div>
       <button>Add to Cart</button>
     </div>
   );
