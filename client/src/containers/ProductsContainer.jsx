@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
-import ProductDisplay from '../components/ProductsDisplay.jsx';
+import ProductDisplay from '../components/ProductDisplay.jsx';
 
 // const mapStateToProps = store => ({
 //   productList: store.products.productList
@@ -17,23 +17,16 @@ class ProductsContainer extends Component {
   componentDidMount() {
     this.props.getInventory()
   }
-  componentDidUpdate() {
-    // this.props.getInventory();
-  }
+
   render() {
-    let arrayofProducts = [];   
+    let arrayofProducts;
     console.log('product list ====> ', this.props.products)
     console.log(this.props.products.productList, "PRODUCT LIST ");
     if (!this.props.products) return null
     else {
-
-    arrayofProducts =  this.props.products.productList.map((element, index) =>
-  {
-    console.log(element)
-    return (<ProductDisplay details={element} key={element.id} />)
-  }  
-  
-  );
+      arrayofProducts = this.props.products.productList.map((element, index) => {
+      return <ProductDisplay details={element.photo} key={index} />
+      });
     }
     console.log(arrayofProducts, "ARRAYS TO BE RENDERED")
 
