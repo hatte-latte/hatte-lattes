@@ -3,3 +3,23 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+img {
+  height: 200px;
+}
+
+.innerbox {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.productBox{
+  margin: 40px;
+}
+
+ul {
+  list-style: none;
+}
